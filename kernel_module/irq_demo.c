@@ -26,7 +26,6 @@ irq_handler_t irq_handler (int irq, void *data)    {
     
     ktime_t this_time = ktime_get();
     if(this_time - last_time > 200000000){
-        printk (KERN_ALERT "\nbutton pressed !\n");
 	gpio_direction_output(LED_1, on_off);
 	on_off ^= 0x01;
 	last_time = this_time;
